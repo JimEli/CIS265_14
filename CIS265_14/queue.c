@@ -31,9 +31,6 @@
 *   11/12/2017: Added removeQueueNode functionality. JME
 *************************************************************************/
 #include "queue.h"
-// Debug memory allocation routines.
-#include "C:\Users\Jim\Documents\Visual Studio 2017\Projects\memTrack\memTrack\memTracker.h"
-
 
 // Internal function used to recursively print queue.
 static void printBackwards(const Node);
