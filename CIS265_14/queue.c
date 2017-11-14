@@ -169,12 +169,12 @@ bool removeQueueNode(Queue q, const int value) {
 }
 
 // Return head of queue.
-Node headQueue(const Queue q) {
+Node peekQueueHeadNode(const Queue q) {
 	return q->head;
 }
 
 // Return tail of queue.
-Node tailQueue(const Queue q) {
+Node peekQueueTailNode(const Queue q) {
 	return q->tail;
 }
 
