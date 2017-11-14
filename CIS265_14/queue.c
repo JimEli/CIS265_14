@@ -29,8 +29,12 @@
 * Change Log:
 *   09/15/2017: Initial release. JME
 *   11/12/2017: Added removeQueueNode functionality. JME
+*   11/14/2017: Gave Queue functions consistent names. JME
 *************************************************************************/
 #include "queue.h"
+// Debug memory allocation routines.
+#include "C:\Users\Jim\Documents\Visual Studio 2017\Projects\memTrack\memTrack\memTracker.h"
+
 
 // Internal function used to recursively print queue.
 static void printBackwards(const Node);
@@ -164,7 +168,6 @@ bool removeQueueNode(Queue q, const int value) {
 	return false;
 }
 
-
 // Return head of queue.
 Node headQueue(const Queue q) {
 	return q->head;
@@ -176,7 +179,7 @@ Node tailQueue(const Queue q) {
 }
 
 // Return head of queue value or NULL if empty.
-bool peekHeadQueue(const Queue q, int *value) {
+bool peekQueueHead(const Queue q, int *value) {
 	if (q->head != NULL) {
 		*value = q->head->value;
 		return true;
@@ -186,7 +189,7 @@ bool peekHeadQueue(const Queue q, int *value) {
 }
 
 // Return tail of queue value or NULL if empty.
-bool peekTailQueue(const Queue q, int *value) {
+bool peekQueueTail(const Queue q, int *value) {
 	if (q->tail != NULL) {
 		*value = q->tail->value;
 		return true;
@@ -196,14 +199,14 @@ bool peekTailQueue(const Queue q, int *value) {
 }
 
 // Print queue from head to tail.
-void printFromHeadQueue(const Queue q) {
+void printQueueFromHead(const Queue q) {
 	for (Node n = q->head; n != NULL; n = n->next)
 		fprintf(stdout, "%d ", n->value);
 	fputs("\n", stdout);
 }
 
 // Print queue from tail to head (reverse).
-void printFromTailQueue(const Queue q) {
+void printQueueFromTail(const Queue q) {
 	printBackwards(q->head);
 	fputs("\n", stdout);
 }
