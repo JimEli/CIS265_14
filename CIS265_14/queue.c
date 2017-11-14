@@ -142,6 +142,7 @@ bool removeQueueNode(Queue q, const int value) {
 	// Walk the queue, checking nodes.
 	while (n) {
 		if (n->value == value) {
+			// Update appropriate links.
 			if (nPrev == NULL)
 				q->head = n->next;
 			else
@@ -150,10 +151,13 @@ bool removeQueueNode(Queue q, const int value) {
 				q->tail = nPrev;
 			break;
 		}
+		
+		// Sequence to next node.
 		nPrev = n;
 		n = n->next;
 	}
 
+	// Remove the node and return success.
 	free(n);
 	return true;
 }
