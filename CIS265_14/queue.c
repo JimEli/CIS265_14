@@ -137,7 +137,8 @@ bool removeQueueNode(Queue q, const int value) {
 	if (q == NULL)
 		return false;
 
-	Node nPrev = NULL, n = q->head; // Start of queue.
+	// Start of queue.
+	Node nPrev = NULL, n = q->head;
 
 	// Walk the queue, checking nodes.
 	while (n) {
@@ -149,18 +150,20 @@ bool removeQueueNode(Queue q, const int value) {
 				nPrev->next = n->next;
 			if (n->next == NULL)
 				q->tail = nPrev;
-			break;
+			// Release node and return.
+			free(n);
+			return true;
 		}
-		
+
 		// Sequence to next node.
 		nPrev = n;
 		n = n->next;
 	}
 
-	// Remove the node and return success.
-	free(n);
-	return true;
+	// Node not found.
+	return false;
 }
+
 
 // Return head of queue.
 Node headQueue(const Queue q) {
