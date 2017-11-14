@@ -62,9 +62,9 @@ size_t sizeQueue(Queue);
 bool removeQueueNode(Queue, const int);
 
 // Return head of queue.
-Node headQueue(const Queue);
+Node popQueueHead(const Queue);
 // Return tail of queue.
-Node tailQueue(const Queue);
+Node popQueueTail(const Queue);
 
 // Return head of queue value or NULL if empty.
 bool peekQueueHead(const Queue, int *);
