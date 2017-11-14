@@ -30,6 +30,7 @@
 * Change Log:
 *   09/15/2017: Initial release. JME
 *   11/12/2017: Added removeQueueNode functionality. JME
+*   11/14/2017: Gave Queue functions consistent names. JME
 *************************************************************************/
 #ifndef _QUEUE_H_
 #define _QUEUE_H_
@@ -66,16 +67,16 @@ Node headQueue(const Queue);
 Node tailQueue(const Queue);
 
 // Return head of queue value or NULL if empty.
-bool peekHeadQueue(const Queue, int *);
+bool peekQueueHead(const Queue, int *);
 // Return tail of queue value or NULL if empty.
-bool peekTailQueue(const Queue, int *);
+bool peekQueueTail(const Queue, int *);
 
 // Print contents of queue from head to tail.
-void printFromHeadQueue(const Queue);
+void printQueueFromHead(const Queue);
 // Print contents of queue from tail to head.
-void printFromTailQueue(const Queue);
+void printQueueFromTail(const Queue);
 // Basic print in forward direction.
-#define printQueue(q) printFromHeadQueue(q)
+#define printQueue(q) printQueueFromHead(q)
 
 #endif /* _QUEUE_H_ */
 
