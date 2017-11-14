@@ -34,6 +34,7 @@
 * Change Log:
 *   09/15/2017: Initial release. JME
 *   11/12/2017: Added removeQueueNode functionality. JME
+*   11/14/2017: Gave Queue functions consistent names. JME
 *************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,6 +42,8 @@
 
 #include "queue.h"
 #include "utils.h"
+// Debug memory allocation routines.
+#include "C:\Users\Jim\Documents\Visual Studio 2017\Projects\memTrack\memTrack\memTracker.h"
 
 // C/C++ Preprocessor Definitions: _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:4996) 
@@ -80,14 +83,14 @@ int main(void) {
 			break;
 
 		case '3': // Display head of queue.
-			if (peekHeadQueue(queue, &i))
+			if (peekQueueHead(queue, &i))
 				fprintf(stdout, "\nHead of queue: %d\n", i);
 			else
 				fputs("\nQueue is empty.\n", stdout);
 			break;
 
 		case '4': // Display tail of queue.
-			if (peekTailQueue(queue, &i))
+			if (peekQueueTail(queue, &i))
 				fprintf(stdout, "\nTail of queue: %d\n", i);
 			else
 				fputs("\nQueue is empty.\n", stdout);
